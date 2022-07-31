@@ -15,17 +15,125 @@ If we want to build any app the two most important thing to think about is Data 
 For each different ways of creating object write different solutions.
 
 - Without Object
+
+
+//data 
+let ques1Title = "What is Arya's Surname?"
+
+let ques1Options = [];
+
+let ques1Index = 2;
+
+// methods 
+
+function isAnswerCorrect(index){
+  if(index == ques1Index){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+function getCorrectAnswer(){
+  return ques1Options[ques1Index];
+}
+
 - Organize using object
+
+
+let ques1 = {
+  title : "What is Arya's surname?",
+
+  options : ["Snow", "Thompson", "Stark", "Larry", "Mckingham"],
+  
+  correctAnswerIndex : 3,
+  
+  isAnswerCorrect(index){
+  if(index == ques1.correctAnswerIndex){
+    return true;
+  }
+  else{
+    return false;
+  }
+  },
+
+  getCorrectAnswer(){
+    return options[correctAnswerIndex];
+  }
+}
+
+
+
 - Use a function to create object
+
+
+function create(title,options,correctIndex){
+
+  let ques = {};
+  ques.title = title;
+  ques.options = options;
+  ques.correctAnswerIndex = correctIndex;
+  
+  ques.isAnswerCorrect = function(index){
+      if(index == ques.correctAnswerIndex){
+    return true;
+  }
+  else{
+    return false;
+  }
+  };
+
+  ques.getCorrectAnswer = function(){
+    return ques.options[ques.correctAnswerIndex];
+  }
+
+  return ques;
+}
+
+
+
 - Convert the function to use `this` keyword
+
+
+
+function create(title,options,correctIndex){
+
+  let ques = {};
+  ques.title = title;
+  ques.options = options;
+  ques.correctAnswerIndex = correctIndex;
+  
+  ques.isAnswerCorrect = function(index){
+      if(index == this.correctAnswerIndex){
+    return true;
+  }
+  else{
+    return false;
+  }
+  };
+
+  ques.getCorrectAnswer = function(){
+    return this.options[this.correctAnswerIndex];
+  }
+
+  return ques;
+}
+
+
+
 - Write test by creating two objects also test both methods.
 
 ### To test use the following data
 
 ```js
+
+
 const testData = {
   title: 'Where is the capital of Jordan',
   options: ['Tashkent', 'Amaan', 'Kuwait City', 'Nairobi'],
   correctAnswerIndex: 1,
 };
+
+
 ```
