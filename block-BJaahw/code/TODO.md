@@ -1,10 +1,51 @@
 1. Create a function `createUser` that accepts `name` and `age` and returns a new object with those properties.
 
+```js 
+
+function createUser(name,age){
+    let user = {};
+    user.name = name;
+    user.age = age;
+    return user;
+}
+
+```
+
 2. Add a method named `sayHello` inside the object created above. When called it should alert `Welcome {user}`. Replace `{user}` with the name of the user.
+
+```js
+
+function createUser(name,age){
+    let user = {};
+    user.name = name;
+    user.age = age;
+
+    user.sayHello = function (){
+        return alert(`Welcome ${user.name}`);
+    }
+    return user;
+}
+
+```
 
 3. Use the data (name, age) of two different person to create the object using `createUser`. Store the returned value in `personOne` and `personTwo`.
 
+```js
+
+let  person1 = createUser("Rashi",21);
+let person2 = createUser("Kushal",23);
+
+
+```
+
 4. Change the code inside `createUser` in such a way that the methods `sayHello` doesn't have to be in all object. Use the prototypal nature. (Hint Object.create())
+
+```js
+
+
+
+
+```
 
 5. Convert the `createUser` function into Pseudoclassical pattern of object creation. Use `F.prototype` to store the methods. `F.prototype` means storing the methods in prototype property of the function.
 
