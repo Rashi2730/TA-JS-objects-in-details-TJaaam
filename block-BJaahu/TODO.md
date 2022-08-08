@@ -14,6 +14,8 @@ For each different ways of creating object write different solutions.
 
 - Prototypal pattern of object creation (Put methods inside an object and create object using Object.create)
 
+```js
+
 let answerMethods = {
   isAnswerCorrect(ind) {
     if(ind == this.index){
@@ -39,7 +41,12 @@ function correctAnswer(title,options,correctAnswerIndex){
 }
 
 
+```
+
 - Pseudoclassical Pattern (Put methods inside F.prototype and use `new` to call function)
+
+
+```js
 
 function CorrectAnswer(title,options,correctAnswerIndex){
   this.title = title;
@@ -60,7 +67,7 @@ CorrectAnswer.prototype = {
   getCorrectAnswer (){
     return (`Correct Answer is ${this.options[this.index]}`);
   }
-};
+}
 
 
 let ques1 = new CorrectAnswer('Where is the capital of Jordan',
@@ -68,7 +75,11 @@ let ques1 = new CorrectAnswer('Where is the capital of Jordan',
   1);
 
 
+```
+
 - Create using class
+
+```js
 
 class Question {
   constructor(title,options,correctAnswerIndex) {
@@ -89,6 +100,8 @@ class Question {
   }
 }
 
+``` 
+
 - Write test by creating two objects also test both methods.
 
 ### To test use the following data
@@ -106,4 +119,4 @@ let secondQuestion = new Question(
   ['Tashkent', 'Amaan', 'Kingston', 'Nairobi'],
   2
 );
-```
+
