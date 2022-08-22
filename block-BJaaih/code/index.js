@@ -70,10 +70,7 @@ Make sure it does not the changes the original array.
 // You code goes here
 
 Array.prototype.shuffle = function () {
-  let arr = [];
-  let l = this.length;
-  for (let i = 0; i < l; i++) {}
-  return arr;
+  return [...this].sort(() => Math.random() - 0.5);
 };
 
 // Test to check the shuffle method (It will return different output every time you call)
