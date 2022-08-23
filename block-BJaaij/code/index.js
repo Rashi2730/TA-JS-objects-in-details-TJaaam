@@ -4,27 +4,33 @@ class BookList {
     this.index = 0;
   }
   add(Books = []) {
-    return this.books.push(Books);
+    this.books = this.books.concat(Books);
+    return this.books;
   }
-  //   getNextBook() {
-  //     return this.books[this.index + 1];
-  //   }
-  //   getPreviousBook() {
-  //     return this.books[this.index - 1];
-  //   }
-  //   changeCurrentBook(ind) {
-  //     this.index = ind;
-  //     return this.books[this.index];
-  //   }
+  getCurrentBook() {
+    return this.books[this.index];
+  }
+  getNextBook() {
+    this.index = this.index + 1;
+    return this.books[this.index];
+  }
+  getPreviousBook() {
+    this.index = this.index - 1;
+    return this.books[this.index];
+  }
+  changeCurrentBook(ind) {
+    this.index = ind;
+    return this.books[this.index];
+  }
 }
 
 class Book {
-  constructor(title, category, author, isRead = false, finishedDate) {
+  constructor(title, category, author) {
     this.title = title;
     this.category = category;
     this.author = author;
-    this.isRead = isRead;
-    this.finishedDate = finishedDate;
+    this.isRead = false;
+    this.finishedDate = null;
   }
   markBookAsRead() {
     this.isRead = true;
@@ -55,7 +61,7 @@ class Book {
 // - [] `changeCurrentBook` should accept one parameter and update the current index.
 // After creating the Book and BookList class create 5 book object and add it to list. Test all the methods in Book and BookList class.
 
-let book1 = new Book(`The Conjuring`, `Horror`, `XYZ`, false, `August 9`);
+let book1 = new Book(`The Conjuring`, `Horror`, `XYZ`);
 console.group(book1.title);
 console.log(book1.author);
 console.log(book1.finishedDate);
@@ -64,7 +70,7 @@ console.log(book1.isRead);
 console.log(book1.finishedDate);
 console.groupEnd();
 
-let book2 = new Book(`The Conjuring 2`, `Horror`, `XYZ`, false, `July 9`);
+let book2 = new Book(`The Conjuring 2`, `Horror`, `XYZ`);
 console.group(book2.title);
 console.log(book2.author);
 console.log(book2.finishedDate);
@@ -73,7 +79,7 @@ console.log(book2.isRead);
 console.log(book2.finishedDate);
 console.groupEnd();
 
-let book3 = new Book(`Anabelle`, `Horror`, `XYZ`, false, `August 20`);
+let book3 = new Book(`Anabelle`, `Horror`, `XYZ`);
 console.group(book3.title);
 console.log(book3.author);
 console.log(book3.finishedDate);
@@ -82,13 +88,7 @@ console.log(book3.isRead);
 console.log(book3.finishedDate);
 console.groupEnd();
 
-let book4 = new Book(
-  `To All the boys I ever Dated`,
-  `Romantic`,
-  `XYZ`,
-  false,
-  `August 11`
-);
+let book4 = new Book(`To All the boys I ever Dated`, `Romantic`, `XYZ`);
 console.group(book4.title);
 console.log(book4.author);
 console.log(book4.finishedDate);
@@ -97,13 +97,7 @@ console.log(book4.isRead);
 console.log(book4.finishedDate);
 console.groupEnd();
 
-let book5 = new Book(
-  `Thor , Love and Thunder`,
-  `Action`,
-  `XYZ`,
-  false,
-  `August 5`
-);
+let book5 = new Book(`Thor , Love and Thunder`, `Action`, `XYZ`);
 console.group(book5.title);
 console.log(book5.author);
 console.log(book5.finishedDate);
