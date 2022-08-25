@@ -1,7 +1,8 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-v2.0 | 20110126
-License: none (public domain)
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
 */
+
 html,
 body,
 div,
@@ -127,61 +128,95 @@ table {
   border-spacing: 0;
 }
 
-/* universal  */
-
+*,
 *::before,
 *::after {
   box-sizing: border-box;
-  text-decoration: none;
 }
 html {
   font-size: 16px;
 }
-
-/* General */
-
-body {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  background-color: rgb(154, 154, 210);
-  text-align: center;
-}
-
 .container {
-  padding: 2rem 0;
-  margin: 0;
+  max-width: 1000px;
+  padding-top: 20px;
+  margin: 0 auto;
+  /* border: 1px solid black; */
+  /* text-align: center; */
 }
 
 h1 {
-  padding: 1rem 0 2rem 0;
-  font-size: 2.85rem;
-  font-style: italic;
-  font-weight: 900;
-  color: rgb(165, 205, 239);
-  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
-    0px -4px 10px rgba(4, 24, 89, 0.3);
+  text-align: center;
+  font-size: 2rem;
 }
-.list {
-  display: grid;
-  grid-gap: 1rem;
-  justify-content: center;
+input {
+  border-radius: 20px;
+}
+.form {
+  width: 100%;
+  margin: 0 auto;
+  /* border: 1px solid black; */
 }
 
-input {
+#title {
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 10px;
+}
+
+.form .title,
+.form .author,
+.form .number {
+  display: inline-block;
+  font-size: 28px;
+  padding: 10px;
+}
+
+#author {
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 10px;
+}
+
+#number {
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 10px;
+}
+
+.f-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submit {
+  width: 40%;
+  padding: 13px 0;
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: 600;
   border: none;
-  height: 2rem;
-  width: 24rem;
-  background-color: rgb(165, 205, 239);
-  border-radius: 1.85rem;
+  border-radius: 20px;
+  background-color: rgb(219, 189, 219);
+  color: black;
   text-align: center;
 }
 
-input::placeholder {
-  font-size: 1.25rem;
-  font-style: italic;
-  color: rgb(170, 170, 226);
-  font-weight: 800;
+.flex {
+  display: flex;
+  justify-content: space-between;
 }
-input:focus {
-  outline: none;
+
+.book-list-heading {
+  border: 2px solid black;
+  padding: 10px 0;
+  align-items: center;
+}
+
+.book-list-heading li {
+  font-size: 32px;
+}
+.book-list {
+  padding: 10px 0;
+  border: 2px solid black;
+  background-color: rgb(204, 240, 240);
 }
